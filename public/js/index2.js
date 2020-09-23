@@ -28,8 +28,6 @@ weatherselect.addEventListener('submit',
 
     option_el = $('#s1 :selected')
     data = option_el.data('data')
-    console.log('option_el : ',option_el)
-    console.log('data : '+data)
     const location = data['text']
     pmsg3.textContent = 'Loading...'
     pmsg4.textContent = ''
