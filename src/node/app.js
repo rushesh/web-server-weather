@@ -6,16 +6,7 @@ const hbs = require('hbs')
 const geoloc = require('./utils/geolocation')
 const getweather = require('./utils/getweather')
 const getcities = require('./utils/getcities')
-
-// const publicPath = path.join(__dirname,'../../public')
-// const viewsPath = path.join(__dirname,'../../templates/views')
-// const viewsPartial = path.join(__dirname,'../../templates/partials')
-
-// app.use(express.static(publicPath))
-// app.set('engine view','hbs')
-// app.set('views',viewsPath)
-// hbs.registerPartials(viewsPartial)
-
+const port = process.env.PORT || 3000
 const staticPath = path.join(__dirname,'../../public')
 const hbsViewsPath = path.join(__dirname,'../../templates/views')
 const hbsPartialPath = path.join(__dirname,'../../templates/partials')
@@ -131,6 +122,6 @@ app.get('*',(req,res)=>{
         pageTitle:'Weather App'
     })
 })
-app.listen(3000,()=>{
-    console.log('Server Started at 3000')
+app.listen(port,()=>{
+    console.log('Server Started at port : '+port)
 })

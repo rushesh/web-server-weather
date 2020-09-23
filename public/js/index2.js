@@ -4,7 +4,7 @@ const pmsg4 = document.querySelector('#message4')
 const buttondropid = document.getElementById("buttondrop");
 const select1 = document.getElementById("s1");
 
-fetch('http://localhost:3000/getcities').then((response) => {
+fetch('/getcities').then((response) => {
   buttondropid.style.display = "none"
   select1.style.display = "none"
   pmsg3.textContent = 'Loading Cities...'
@@ -33,7 +33,7 @@ weatherselect.addEventListener('submit',
     const location = data['text']
     pmsg3.textContent = 'Loading...'
     pmsg4.textContent = ''
-    const url = 'http://localhost:3000/weather?address=' + (location)
+    const url = '/weather?address=' + (location)
     fetch(url).then((response) => {
       response.json().then((data) => {
         if (data.error) {
