@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const hbs = require('hbs')
-
+const cors = require('cors')
 const geoloc = require('./utils/geolocation')
 const getweather = require('./utils/getweather')
 const getcities = require('./utils/getcities')
@@ -14,6 +14,7 @@ const hbsPartialPath = path.join(__dirname,'../../templates/partials')
 
 
 app.use(express.static(staticPath))
+app.use(cors())
 app.set('view engine','hbs')
 app.set('views',hbsViewsPath)
 hbs.registerPartials(hbsPartialPath)
